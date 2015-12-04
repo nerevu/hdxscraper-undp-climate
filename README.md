@@ -55,7 +55,6 @@ hdxscraper-undp-climate requires the following in order to run properly:
 
 *ScraperWiki Box*
 
-    cd tool
     source venv/bin/activate
     screen manage -m Scraper run
     Now press `Ctrl-a d`
