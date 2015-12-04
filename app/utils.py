@@ -24,7 +24,7 @@ def fetch(**kwargs):
     base = '%s/%s/%s' % (kwargs['BASE_URL'], slug, kwargs['DIR'])
     url = '%s/%s.%s' % (base, slug, kwargs['FILE_EXT'])
     r = requests.get(url, stream=True)
-    print(r)
+    print(r, kwargs['location'])
 
     return {
         'f': r.raw,
@@ -32,7 +32,7 @@ def fetch(**kwargs):
         'encoding': r.encoding,
         'first_row': 3,
         'has_header': True,
-        'widths': [0, 7, 16, 24, 32, 40]}
+        'widths': [0, 7, 14, 22, 30, 38]}
 
 
 def get_name(group_name):
