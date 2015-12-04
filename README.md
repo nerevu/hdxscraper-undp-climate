@@ -1,14 +1,23 @@
 # UNDP Climate Change Data Collector
 
-Collector for [Data Source](http://link.com).
+[HDX](https://data.hdx.rwlabs.org/) collector for [UNDP Climate Change Data](http://www.geog.ox.ac.uk/research/climate/projects/undp-cp/).
 
 ## Introduction
 
 This collector operates in the following way:
 
-- step 1
-- step 2
-- step 3
+- Downloads a fixed-width text file of climate data for each country
+- Parses and enriches the data with country name and a unique row identifier
+- Adds new records to the database `climate` table
+
+With hdxscraper-undp-climate, you can
+
+- Save UNDP Climate Change Data to an external database
+- Create CKAN datasets/packages for each database table
+- Upload ScraperWiki generated CSV files into a CKAN instance
+- Update resources previously uploaded to CKAN with new metadata
+
+[View the live data](https://data.hdx.rwlabs.org/organization/undp-human-development-reports-office)
 
 ## Requirements
 
@@ -33,6 +42,9 @@ hdxscraper-undp-climate requires the following in order to run properly:
 
 *ScraperWiki Box*
 
+    rm -rf tool
+    git clone https://github.com/reubano/hdxscraper-undp-climate.git tool
+    cd tool
     make setup
 
 ## Usage
@@ -50,15 +62,33 @@ hdxscraper-undp-climate requires the following in order to run properly:
 
 The results will be stored in a SQLite database `scraperwiki.sqlite`.
 
-## Migrate tables to HDX/CKAN
+## Upload tables to [HDX](http://data.hdx.rwlabs.org/)/[CKAN](http://ckan.org/)
 
-*migrate to production site*
+*upload to production site*
 
-    manage migrate
+    manage upload
 
-*migrate to staging site*
+*upload to staging site*
 
-    manage migrate -s
+    manage upload -s
+
+## Update tables on [HDX](http://data.hdx.rwlabs.org/)/[CKAN](http://ckan.org/) with new metadata
+
+*update dataset on production site*
+
+    manage update
+
+*update dataset on staging site*
+
+    manage update -s
+
+## Update ScraperWiki box with new code
+
+    cd tool
+    make update
+    source venv/bin/activate
+    screen manage -m Scraper run
+    # Now press `Ctrl-a d`
 
 ## Configuration
 
@@ -71,13 +101,34 @@ CKAN_PROD_URL|Your CKAN instance remote production url
 CKAN_REMOTE_URL|Your CKAN instance remote staging url
 CKAN_USER_AGENT|Your user agent
 
+## Creating a new collector
+
+If you would like to create collector or scraper from scratch, check out [cookiecutter-collector](https://github.com/reubano/cookiecutter-collector).
+
+    pip install cookiecutter
+    cookiecutter https://github.com/reubano/cookiecutter-collector.git
+
 ## Contributing
+
+### Code
 
 1. fork
 2. commit
 3. submit PR
 4. ???
 5. PROFIT!!!
+
+### Document
+
+- improve this readme
+- add comments to confusing parts of the code
+- write a "Getting Started" guide
+- write additional deployment instructions ([Heroku](http://heroku.com/), [AWS](http://aws.amazon.com/), [Digital Ocean](http://digitalocean.com/), [GAE](https://appengine.google.com/))
+
+### QA
+
+1. follow this guide and see if everything works as expected
+2. if something doesn't work, please submit an issue
 
 ## License
 

@@ -25,19 +25,19 @@ class Config(object):
     BASE_URL = '%s/research/climate/projects/undp-cp/UNDP_data' % base
     FILE_EXT = 'ts.obs.precip.ts.ensemblemean.abs.txt'
     DIR = 'Observed/Mean/Timeseries/Absolute'
-    locs = [
+    loc = [
         'Afghanistan', 'Angola', 'Antigua and Barbuda', 'Argentina', 'Armenia',
         'Bangladesh', 'Barbados', 'Belize', 'Benin', 'Cambodia', 'Cameroon',
         'Cape Verde', 'Chad', 'Chile', 'China', 'Colombia', 'Comoros', 'Cuba',
         'Dominica', 'Dominican Republic', 'Equatorial Guinea', 'Eritrea',
         'Ethiopia', 'Gabon', 'Gambia', 'Ghana', 'Grenada', 'Guinea', 'Guyana',
-        'Indonesia', 'Jamaica', 'Kenya', 'Lebanon', 'Liberia', 'Malawi', 'Mali',
+        'Indonesia', 'Jamaica', 'Kenya', 'Liberia', 'Malawi', 'Mali',
         'Mauritania', 'Mauritius', 'Mexico', 'Morocco', 'Mozambique', 'Nepal',
-        'Nicaragua', 'Nigeria', 'Pakistan', 'Sao Tome and Principe', 'Senegal',
-        'Sierra Leone', 'South Africa', 'St Kitts and Nevis', 'St Lucia',
+        'Nicaragua', 'Pakistan', 'Sao Tome and Principe', 'Senegal',
+        'Sierra Leone', 'St Kitts and Nevis', 'St Lucia',
         'St Vincent and the Grenadines', 'Suriname', 'Tanzania', 'The Bahamas',
         'Togo', 'Trinidad and Tobago', 'Uganda', 'Vietnam', 'Yemen', 'Zambia']
-    TABLES = [{'name': 'climate', 'location': 'Afghanistan'}]
+    TABLES = [{'name': 'climate', 'location': l, 'rid': 'rid'} for l in loc]
     SQLALCHEMY_DATABASE_URI = 'sqlite:///%s' % p.join(BASEDIR, DB_NAME)
     API_LIMIT = 1000
     SW = False
@@ -63,7 +63,7 @@ class Production(Config):
 class Development(Config):
     DEBUG = True
     CHUNK_SIZE = 2 ** 4
-    ROW_LIMIT = 50
+    ROW_LIMIT = 16
 
 
 class Test(Config):

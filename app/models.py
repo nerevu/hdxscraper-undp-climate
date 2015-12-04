@@ -21,11 +21,11 @@ class Climate(db.Model):
         db.DateTime, nullable=False, default=dt.utcnow(), onupdate=dt.utcnow())
 
     # other keys
-    rid = db.Column(db.String(128), nullable=False)
+    rid = db.Column(db.String(128), unique=True)
     country = db.Column(db.String(64), nullable=False)
     year = db.Column(db.Integer, nullable=False)
-    annual = db.Column(db.Numeric, nullable=False)
-    djf = db.Column(db.Numeric, nullable=False)
-    mam = db.Column(db.Numeric, nullable=False)
-    jja = db.Column(db.Numeric, nullable=False)
-    son = db.Column(db.Numeric, nullable=False)
+    annual = db.Column(db.Numeric)
+    djf = db.Column(db.Numeric)
+    mam = db.Column(db.Numeric)
+    jja = db.Column(db.Numeric)
+    son = db.Column(db.Numeric)
