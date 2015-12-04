@@ -24,7 +24,6 @@ def fetch(**kwargs):
     base = '%s/%s/%s' % (kwargs['BASE_URL'], slug, kwargs['DIR'])
     url = '%s/%s.%s' % (base, slug, kwargs['FILE_EXT'])
     r = requests.get(url, stream=True)
-    print(r, kwargs['location'])
 
     return {
         'f': r.raw,
