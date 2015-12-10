@@ -22,8 +22,8 @@ echo "Uploading data to $URL..."
 
 ckanny pk.create \
   -ps "$TSOURCE" \
-  -t "UNDP Climate Change Country Profiles - All Africa" \
-  -n "UNDP Climate Change Country Profiles - All Africa" \
+  -t "Observed mean precipitation - All Africa" \
+  -n "Observed mean precipitation - All Africa" \
   -f "${BASE}/climate.csv" \
   -S "1/1/1960" \
   -e "12/31/2006" \
