@@ -12,8 +12,8 @@ else
   URL=`printenv CKAN_REMOTE_URL`
 fi
 
-OID="undp-human-development-reports-office"
-BASE="https://ds-ec2.scraperwiki.com/dghykmr/umkfikfub2ahqa2/cgi-bin/csv"
+OID="hdx"
+BASE="https://ds-ec2.scraperwiki.com/fflzvxg/kigsgnbzbuue5x2/cgi-bin/csv"
 TSOURCE="UNDP"
 TAGS=""
 METHODOLOGY="http://ora.ox.ac.uk/objects/uuid:73f9204b-37db-4cf1-b204-e264a8d60f0c"
@@ -22,8 +22,8 @@ echo "Uploading data to $URL..."
 
 ckanny pk.create \
   -ps "$TSOURCE" \
-  -t "UNDP Climate Change Country Profiles - All Africa" \
-  -n "UNDP Climate Change Country Profiles - All Africa" \
+  -t "Observed mean precipitation - All Africa" \
+  -n "Observed mean precipitation - All Africa" \
   -f "${BASE}/climate.csv" \
   -S "1/1/1960" \
   -e "12/31/2006" \

@@ -37,6 +37,7 @@ class Config(object):
         'Sierra Leone', 'St Kitts and Nevis', 'St Lucia',
         'St Vincent and the Grenadines', 'Suriname', 'Tanzania', 'The Bahamas',
         'Togo', 'Trinidad and Tobago', 'Uganda', 'Vietnam', 'Yemen', 'Zambia']
+
     TABLES = [{'name': 'climate', 'location': l, 'rid': 'rid'} for l in loc]
     SQLALCHEMY_DATABASE_URI = 'sqlite:///%s' % p.join(BASEDIR, DB_NAME)
     API_LIMIT = 1000

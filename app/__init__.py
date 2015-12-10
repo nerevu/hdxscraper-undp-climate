@@ -14,7 +14,7 @@ import config
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 
-__version__ = '0.5.1'
+__version__ = '0.6.0'
 
 __title__ = 'hdxscraper-undp-climate'
 __author__ = 'Reuben Cummings'
