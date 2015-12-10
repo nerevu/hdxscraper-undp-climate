@@ -12,8 +12,8 @@ else
   URL=`printenv CKAN_REMOTE_URL`
 fi
 
-OID="undp-human-development-reports-office"
-BASE="https://ds-ec2.scraperwiki.com/dghykmr/umkfikfub2ahqa2/cgi-bin/csv"
+OID="hdx"
+BASE="https://ds-ec2.scraperwiki.com/fflzvxg/kigsgnbzbuue5x2/cgi-bin/csv"
 TSOURCE="UNDP"
 TAGS=""
 METHODOLOGY="http://ora.ox.ac.uk/objects/uuid:73f9204b-37db-4cf1-b204-e264a8d60f0c"
