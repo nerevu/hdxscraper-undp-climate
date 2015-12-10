@@ -1,5 +1,6 @@
 *.py[cod]
-*.slite
+*.sqlite
+http/log.txt
 
 # C extensions
 *.so
