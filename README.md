@@ -1,6 +1,6 @@
 # UNDP Climate Change Data Collector
 
-[HDX](https://data.hdx.rwlabs.org/) collector for [UNDP Climate Change Data](http://www.geog.ox.ac.uk/research/climate/projects/undp-cp/).
+[HDX](https://data.humdata.org/) collector for [UNDP Climate Change Data](http://www.geog.ox.ac.uk/research/climate/projects/undp-cp/).
 
 ## Introduction
 
@@ -17,7 +17,7 @@ With hdxscraper-undp-climate, you can
 - Upload ScraperWiki generated CSV files into a CKAN instance
 - Update resources previously uploaded to CKAN with new metadata
 
-[View the live data](https://data.hdx.rwlabs.org/organization/undp-human-development-reports-office)
+[View the live data](https://data.humdata.org/organization/undp-human-development-reports-office)
 
 ## Requirements
 
@@ -61,7 +61,7 @@ hdxscraper-undp-climate requires the following in order to run properly:
 
 The results will be stored in a SQLite database `scraperwiki.sqlite`.
 
-## Upload tables to [HDX](http://data.hdx.rwlabs.org/)/[CKAN](http://ckan.org/)
+## Upload tables to [HDX](http://data.humdata.org/)/[CKAN](http://ckan.org/)
 
 *upload to production site*
 
@@ -71,7 +71,7 @@ The results will be stored in a SQLite database `scraperwiki.sqlite`.
 
     manage upload -s
 
-## Update tables on [HDX](http://data.hdx.rwlabs.org/)/[CKAN](http://ckan.org/) with new metadata
+## Update tables on [HDX](http://data.humdata.org/)/[CKAN](http://ckan.org/) with new metadata
 
 *update dataset on production site*
 
